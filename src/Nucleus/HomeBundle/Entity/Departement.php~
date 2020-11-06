@@ -1,0 +1,128 @@
+<?php
+// src/Nucleus/HomeBundle/Entity/Departement.php
+namespace Nucleus\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Entity(repositoryClass="Nucleus\HomeBundle\Entity\DepartementRepository")
+* @ORM\Table(name="departement")
+*/
+class Departement
+{
+   /**
+    * @var bigint $id
+    * @ORM\Column(name="id", type="bigint")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    
+   /**
+    * @var string $name
+    * @ORM\Column(name="name", type="string", length=255, nullable=false)
+    */
+    protected $name;
+    
+    /**
+    * @var datetime $date_insertion
+    * @ORM\Column(name="date_insertion", type="datetime", nullable=false)
+    */
+    protected $date_insertion;
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="Nucleus\HomeBundle\Entity\Pays")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $pays;
+    
+   /**
+    * @ORM\OneToMany(targetEntity="Nucleus\HomeBundle\Entity\Commune", mappedBy="departement")
+    */
+    protected $commune;
+    
+    public function __construct()
+    {
+        $this->date_insertion = new \Datetime(); 
+        $this->departement = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Departement
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set date_insertion
+     *
+     * @param \DateTime $dateInsertion
+     * @return Departement
+     */
+    public function setDateInsertion($dateInsertion)
+    {
+        $this->date_insertion = $dateInsertion;
+    
+        return $this;
+    }
+
+    /**
+     * Get date_insertion
+     *
+     * @return \DateTime 
+     */
+    public function getDateInsertion()
+    {
+        return $this->date_insertion;
+    }
+
+    /**
+     * Set pays
+     *
+     * @param \Nucleus\HomeBundle\Entity\Pays $pays
+     * @return Departement
+     */
+    public function setPays(\Nucleus\HomeBundle\Entity\Pays $pays)
+    {
+        $this->pays = $pays;
+    
+        return $this;
+    }
+
+    /**
+     * Get pays
+     *
+     * @return \Nucleus\HomeBundle\Entity\Pays 
+     */
+    public function getPays()
+    {
+        return $this->pays;
+    }
+}

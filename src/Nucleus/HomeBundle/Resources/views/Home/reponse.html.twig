@@ -1,0 +1,25 @@
+{# src/Nucleus/HomeBundle/Resources/views/Home/login.html.twig #}
+{% extends "NucleusHomeBundle::layout.html.twig" %}
+{% block body %}
+    <div class="section annonces">
+    <div class="container" id="reponse" >
+         <h3 class="center">Répondre à l'annonce #00{{annonce.id}} </h3>
+    <form class="center" action="{{ path('NucleusHomeBundle_reponse', {'id': annonce.id}) }}" method="post" {{form_enctype(form) }}>
+        {# Les erreurs générales du formulaire. #}
+        {{ form_errors(form) }}
+        
+        <div class="form_quantite">
+            {{ form_row(form.message,{ 'attr': { 'class': 'u-full-width'}}) }}
+        </div>
+        <div class="form_quantite">
+            {{ form_row(form.quantite) }}
+        </div>
+        {{ form_rest(form) }}
+        <input class="button-primary" type="submit" value="Répondre à l'annonce #00{{annonce.id}}">
+    </form>
+
+    </div> 
+    </div>   
+      
+ {% endblock %}
+        

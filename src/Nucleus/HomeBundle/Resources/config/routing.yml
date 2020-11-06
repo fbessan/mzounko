@@ -1,0 +1,4 @@
+#src/Nucleus/HomeBundle/Ressources/config/routing.yml;
+NucleusHomeBundle_list:
+    pattern:  /list
+    defaults: { _controller: NucleusHomeBundle:Home:home }

@@ -1,0 +1,46 @@
+<?php
+// src/Nucleus/HomeBundle/Entity/Paie.php
+namespace Nucleus\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Entity(repositoryClass="Nucleus\HomeBundle\Entity\PaieRepository")
+* @ORM\Table(name="paie")
+*/
+class Paie
+{
+   /**
+    * @var bigint $id
+    * @ORM\Column(name="id", type="bigint")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    
+   /**
+    * @var bigint $montant
+    * @ORM\Column(name="montant", type="string", length=255, nullable=false)
+    */
+    protected $montant; 
+      
+   /**
+    * @ORM\ManyToOne(targetEntity="Nucleus\HomeBundle\Entity\Reponse")
+    * @ORM\JoinColumn(nullable=true)
+    */
+    protected $reponse;
+    
+          
+   /**
+    * @ORM\ManyToOne(targetEntity="Nucleus\HomeBundle\Entity\Annonce")
+    * @ORM\JoinColumn(nullable=true)
+    */
+    protected $annonce;
+   
+    /**
+    * @var datetime $date
+    * @ORM\Column(name="date", type="datetime", nullable=false)
+    */
+    protected $date;
+    
+   
+}

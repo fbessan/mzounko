@@ -1,0 +1,38 @@
+<?php
+// src/Nucleus/HomeBundle/Entity/Date.php
+namespace Nucleus\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Entity(repositoryClass="Nucleus\HomeBundle\Entity\DateRepository")
+* @ORM\Table(name="date")
+*/
+class Date
+{
+   /**
+    * @var bigint $id
+    * @ORM\Column(name="id", type="bigint")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    
+   /**
+    * @var string $action
+    * @ORM\Column(name="action", type="string", length=255, nullable=false)
+    */
+    protected $action;
+
+    /**
+    * @var datetime $date
+    * @ORM\Column(name="date", type="datetime", nullable=false)
+    */
+    protected $date;
+    
+    public function __construct()
+    {
+        $this->date = new \Datetime(); 
+    }
+
+    
+}

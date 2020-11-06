@@ -1,0 +1,62 @@
+<resources>
+    <!--<string name="app_name">M-zounkô</string>-->
+    <string name="app_name">mzounko</string>
+    <string name="action_settings">Settings</string>
+    <string name="nodata">No data is available</string>
+    <string name="libelle">lorem ipsum dolor blabla  toloro fifu gosou pere misue papa tara dou gooogo karak</string>
+    <string name="font_fontFamily_medium">sans-serif</string>
+
+    <string-array name="categories">
+        <item>Tous</item>
+        <item>Plastique</item>
+        <item>Verre</item>
+        <item>Papier</item>
+        <item>Bois</item>
+        <item>Electronique</item>
+        <item>Metal</item>
+        <item>Chimique</item>
+        <item>Autres </item>
+    </string-array>
+
+    <!--<string-array name="categoriesbis">
+        <item>Metal</item>
+        <item>Sachet plastique</item>
+        <item>Chimique</item>
+        <item>Bouteille plastique</item>
+        <item>Verre</item>
+        <item>Electronique</item>
+        <item>Papier</item>
+        <item>Huile</item>
+    </string-array>-->
+
+    <string-array name="type">
+        <item>Achat</item>
+        <item>Vente</item>
+    </string-array>
+    <string name="title_activity_post">Nouvelle annonce</string>
+
+
+    <string name="hint_nom">* Nom</string>
+    <string name="hint_prenom">* Prénom(s)</string>
+    <string name="hint_email">Email ou Phone</string>
+    <string name="hint_whatsapp">Numéro Whatsapp</string>
+    <string name="btngenerate">Générer un nouveau code</string>
+    <string name="btnupdateemail">Modifier mon email</string>
+    <string name="hint_code">Saisir le code</string>
+    <string name="hint_facebook">Compte Facebook</string>
+    <string name="hint_twitter">Compte Twitter</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_tel">* Téléphone</string>
+    <string name="hint_telcode">Code Pays</string>
+    <string name="hint_datenais">* Date de naissance</string>
+    <string name="btn_new_member">Je suis nouveau</string>
+    <string name="btn_existing_member">Je suis déjà membre</string>
+    <string name="btn_sign_in">Sign in</string>
+    <string name="btn_sign_up">Create account</string>
+    <string name="action_next">Suivant</string>
+    <string name="app_label">Rechercher</string>
+    <string name="search_hint">Rechercher</string>
+    <string name="contact">Rechercher</string>
+
+
+</resources>

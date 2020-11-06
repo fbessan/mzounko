@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:background="#1c519b"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="2"
+            >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:src="@drawable/logomzounko"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The waste, profit!"
+                android:textColor="#fff"
+                android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        >
+
+        <Button android:id="@+id/btn_sign_up"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_sign_up"
+            android:background="@drawable/my_button_bg_white"
+            android:textColor="#1c519b"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I have an account"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:layout_marginBottom="8dp"/>
+
+        <Button android:id="@+id/btn_signin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_sign_in"
+
+            android:background="@drawable/my_button_bg"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:clickable="true"
+            />
+    </LinearLayout>
+</LinearLayout>

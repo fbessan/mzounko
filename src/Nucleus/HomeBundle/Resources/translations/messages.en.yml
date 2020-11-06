@@ -1,0 +1,7 @@
+# src/Nucleus/HomeBundle/Ressources/translations/messages.fr.yml
+menu:
+    mon.compte: Account
+    preferences: Wishlist
+    caisse: Checkout
+    panier:  Cart
+    identifier: Login

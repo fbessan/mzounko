@@ -1,0 +1,9 @@
+
+{# On étend notre layout #}
+{% extends "::layout.html.twig" %}
+{% block title %}  M-zounkô : {{ status_text }} {% endblock %}
+{# Dans notre layout, il faut définir le block body #}
+{% block body %}
+   <h1>Oups! Une erreur est survenue</h1>
+   <h2>Le serveur a retourné une erreur "{{ status_code }} {{ status_text }}". Veuillez verifier votre action.</h2>  
+{% endblock %}

@@ -1,0 +1,164 @@
+<?php
+// src/Nucleus/HomeBundle/Entity/Place.php
+namespace Nucleus\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Entity(repositoryClass="Nucleus\HomeBundle\Entity\PlaceRepository")
+* @ORM\Table(name="place")
+*/
+class Place
+{
+   /**
+    * @var bigint $id
+    * @ORM\Column(name="id", type="bigint")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    protected $id;
+    
+   /**
+    * @var string $name
+    * @ORM\Column(name="name", type="string", length=255, nullable=false)
+    */
+    protected $name;
+    
+    /**
+    * @var string $address
+    * @ORM\Column(name="address", type="string", length=255, nullable=false)
+    */
+    protected $address;
+    
+   /**
+    * @var decimal $longitude
+    * @ORM\Column(name="longitude", type="decimal", nullable=true)
+    */
+    protected $longitude;
+    
+   /**
+    * @var decimal $latitude
+    * @ORM\Column(name="latitude", type="decimal", nullable=true)
+    */
+    protected $latitude;
+    
+    /**
+    * @var datetime $date_insertion
+    * @ORM\Column(name="date_insertion", type="datetime", nullable=false)
+    */
+    protected $date_insertion;
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="Nucleus\HomeBundle\Entity\Commune")
+    * @ORM\JoinColumn(nullable=false)
+    */
+    protected $commune;
+    
+    public function __construct()
+    {
+        $this->date_insertion = new \Datetime(); 
+    }
+
+    
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Place
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set date_insertion
+     *
+     * @param \DateTime $dateInsertion
+     * @return Place
+     */
+    public function setDateInsertion($dateInsertion)
+    {
+        $this->date_insertion = $dateInsertion;
+    
+        return $this;
+    }
+
+    /**
+     * Get date_insertion
+     *
+     * @return \DateTime 
+     */
+    public function getDateInsertion()
+    {
+        return $this->date_insertion;
+    }
+
+    /**
+     * Set commune
+     *
+     * @param \Nucleus\HomeBundle\Entity\Commune $commune
+     * @return Place
+     */
+    public function setCommune(\Nucleus\HomeBundle\Entity\Commune $commune)
+    {
+        $this->commune = $commune;
+    
+        return $this;
+    }
+
+    /**
+     * Get commune
+     *
+     * @return \Nucleus\HomeBundle\Entity\Commune 
+     */
+    public function getCommune()
+    {
+        return $this->commune;
+    }
+
+    /**
+     * Set address
+     *
+     * @param string $address
+     * @return Place
+     */
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    
+        return $this;
+    }
+
+    /**
+     * Get address
+     *
+     * @return string
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+}

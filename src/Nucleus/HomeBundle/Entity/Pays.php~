@@ -1,0 +1,127 @@
+<?php
+// src/Nucleus/HomeBundle/Entity/Pays.php
+namespace Nucleus\HomeBundle\Entity;
+use Doctrine\ORM\Mapping as ORM;
+/**
+* @ORM\Entity
+* @ORM\Entity(repositoryClass="Nucleus\HomeBundle\Entity\PaysRepository")
+* @ORM\Table(name="pays")
+*/
+class Pays
+{
+   /**
+    * @var smallint $id
+    * @ORM\Column(name="id", type="smallint")
+    * @ORM\Id
+    * @ORM\GeneratedValue(strategy="AUTO")
+    */
+    
+    protected $id;
+   /**
+    * @var string $name
+    * @ORM\Column(name="name", type="string", length=255, nullable=false)
+    */
+    protected $name;
+    
+    /**
+    * @var string $capital
+    * @ORM\Column(name="capital", type="string", length=255, nullable=false)
+    */
+    protected $capital;
+    
+    /**
+    * @var datetime $date_insertion
+    * @ORM\Column(name="date_insertion", type="datetime", nullable=false)
+    */
+    protected $date_insertion;
+    
+   /**
+    * @ORM\OneToMany(targetEntity="Nucleus\HomeBundle\Entity\Departement", mappedBy="pays")
+    */
+    protected $departement;
+    
+    public function __construct()
+  {
+    $this->date_insertion = new \Datetime(); 
+  }
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Pays
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set capital
+     *
+     * @param string $capital
+     * @return Pays
+     */
+    public function setCapital($capital)
+    {
+        $this->capital = $capital;
+    
+        return $this;
+    }
+
+    /**
+     * Get capital
+     *
+     * @return string 
+     */
+    public function getCapital()
+    {
+        return $this->capital;
+    }
+
+    /**
+     * Set date_insertion
+     *
+     * @param \DateTime $dateInsertion
+     * @return Pays
+     */
+    public function setDateInsertion($dateInsertion)
+    {
+        $this->date_insertion = $dateInsertion;
+    
+        return $this;
+    }
+
+    /**
+     * Get date_insertion
+     *
+     * @return \DateTime 
+     */
+    public function getDateInsertion()
+    {
+        return $this->date_insertion;
+    }
+}

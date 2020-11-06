@@ -1,0 +1,38 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+  {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+  {% if error %}
+    <div class="alert alert-error">{{ error.message }}</div>
+  {% endif %}
+  {# Le formulaire, avec URL de soumission vers la route «login_check » comme on l'a vu #}
+  <center>
+       <div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                <a href="{{ path('fos_user_security_logout') }}">
+                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                </a>
+            {% else %}
+                <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+            {% endif %}
+        </div>
+
+        {% for type, messages in app.session.flashBag.all %}
+            {% for message in messages %}
+                <div class="{{ type }}">
+                    {{ message|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
+      <form action="{{ path('login_check') }}" method="post">
+        <label for="username">Login :</label>
+        <input type="text" id="username" name="_username" value="{{last_username }}" />
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="_password" />
+        <br />
+
+         <input type="submit" value="Connexion" />
+      </form>
+  </center>
+{% endblock %}

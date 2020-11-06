@@ -1,0 +1,29 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="text_size_diff_large_small">6sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">14sp</dimen>
+    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_xsmall">11sp</dimen>
+
+    <dimen name="card_corner_radius">2dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="session_details_extra_space_bottom">16.0dip</dimen>
+    <dimen name="session_details_floating_height">650.0dip</dimen>
+    <dimen name="session_details_floating_width">500.0dip</dimen>
+    <dimen name="keyline_1">16.0dip</dimen>
+
+    <dimen name="keyline_2">72.0dip</dimen>
+    <dimen name="keyline_2_minus_16dp">56.0dip</dimen>
+    <item type="dimen" name="keyline_2_session_detail">@dimen/keyline_2</item>
+
+    <dimen name="explore_grid_padding">4dp</dimen>
+    <dimen name="explore_grid_padding_half">2dp</dimen>
+
+</resources>
